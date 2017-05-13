@@ -1,0 +1,167 @@
+
+
+<!doctype html>
+<html>
+<head>
+    <title><strong>Article Search</strong></title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Italianno|Monoton|Niconne&subset=latin-ext">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+         
+</head>
+<body>
+<!-- Navbar starts here-->
+    <!-- <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/"> STOCK TRACKER </a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Page 1-1</a></li>
+              <li><a href="#">Page 1-2</a></li>
+              <li><a href="#">Page 1-3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Page 2</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-user"></span> Sign Up/ Register </a></li>
+        </ul>
+      </div>
+    </nav>
+ -->
+    <div class="container">
+
+        <section class="userForm">
+
+          <div class="row userForm">
+
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    <h2 class="panel-title"><span class="glyphicon glyphicon-list-alt"></span><strong>  Search & Add Companies  </strong></h2>
+                    </div>
+                        
+                <div class="panel-body">
+                  <form role="form" id="search">
+
+                    <div class="row form-row">
+                      <div class="col-xs-2">
+                        <div class="form-group">
+                            <label for="company-symbol"> Symbol of Co: </label>
+                            <input class = "input form-control" type="symbol" name="name of co." required placeholder value="icon" id=''>
+                        </div>
+                      </div>
+
+                      <div class="col-xs-10">
+                        <div class="form-group">
+                            <label for="company-name"> Name Of Co: </label>
+                            <input class = "input form-control" required placeholder="Name of the company" type='text'  id='search-for'>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row form-row">
+                      <div class="col-xs-4">
+                        <div class="form-group">
+                            <label for="buying stock-price/unit"> Buying Price: </label>
+                            <input class = "input form-control" required placeholder="Buying price per unit" type='text'  id='bPrice'>
+                        </div>
+                      </div>
+
+                      <div class="col-xs-4">
+                        <div class="form-group">
+                            <label for="current stock-price/unit"> Current Price: </label>
+                            <input class = "input form-control" required placeholder="Current stock price per unit" type='text'  id='cPrice'>
+                        </div>
+                      </div>
+
+                      <div class="col-xs-4">
+                        <div class="form-group">
+                            <label for="holding stock quantity in numbers"> Quantity: </label>
+                            <input class = "input form-control" required placeholder="holding stock quantity" type='text'  id='quantity'>
+                        </div>
+                      </div>
+                    </div>
+<!-- 
+                    <div class="form-group">
+                        <label for="diffrenece in stock price per unit"> Difference: </label>
+                        <input class = "input form-control" required placeholder="diffrenece in stock price per unit" type='text'  id='diffPrice'>
+                    </div>  -->                  
+                    <div class="row form-row">
+                      <div class="col-xs-4">
+                        <div class="form-group">
+                            <label for="sel1"> Price Increase by: </label>
+                              <select class="form-control" id="sel1">
+                                <option>10%</option>
+                                <option>25%</option>
+                                <option>50%</option>
+                                <option>100%</option>
+                            </select>
+                        </div>
+                      </div>
+
+                      <div class="col-xs-6">
+                        <div class="form-group">
+                            <label for="sel2"> E-mail Alerts: </label>
+                            <select class="form-control" id="sel2">
+                                <option>YES</option>
+                                <option>NO</option>
+                                <option>DISABLED</option>
+                            </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row form-row">
+                      <div class="col-xs-4">
+                        <div class="form-group">
+                          <div class="checkbox">
+                            <label><input type="checkbox" value="delete"> Edit </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-xs-4">
+                        <div class="form-group">
+                            <button id="delete" type="button" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span> Delete </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button id="submit" type="button" class="btn btn-default search"><span class="glyphicon glyphicon-search"></span> Search/Add </button>
+
+                    <button id="clear" type="button" class="btn btn-default clear"><span class="glyphicon glyphicon-trash"></span> Clear Results </button> 
+
+                  </form>
+                </div>
+
+            </div>
+          
+          </div>
+
+          <div class="row marketAnalysisView">
+
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    <h2 class="panel-title"><span class="glyphicon glyphicon-list-alt"></span><strong>  View Advisor's Blogs Before Investing!  </strong></h2>
+                    </div>
+                        
+                <div class="panel-body">
+
+        </section>
+
+    </div>
+              
