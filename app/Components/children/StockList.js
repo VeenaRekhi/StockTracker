@@ -3,6 +3,10 @@ var React = require("react");
 var Stock = require("./Stock");
 
 var StockList = React.createClass({
+    getInitialState: function() {
+        var list = this.props.clist;
+        return {list};
+    },    
     handleStockRemove: function(stock){
         console.log("handleStockRemove");
         this.props.onStockRemove( stock );
@@ -13,10 +17,13 @@ var StockList = React.createClass({
         // this.props.clist.forEach(function(stock) {
         // stocks.push(<Stock stock={stock} onStockDelete={that.handleStockRemove} /> );
         // });
-
-        {this.props.clist.map(function(stock, i){
-            stocks.push(<Stock stock={stock} onStockDelete={that.handleStockRemove} key={i} />);
-         })};
+console.log("outside stock map - this is the clist");
+console.log(this.state.list);
+//        {this.state.list.map(function(stock, i) {
+        for (var i in this.state.list) {
+console.log("inside stock map");
+            stocks.push(<Stock stock={this.state.list[i]} onStockDelete={that.handleStockRemove} />);
+         };
 
         return ( 
         <div>

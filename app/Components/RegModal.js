@@ -69,7 +69,7 @@ var RegModal = React.createClass({
                     <div className="panel-body">
 
                     {/*<!-- Entry Form -->*/}
-                    <form onSubmit={this.handleSubmit}>
+                    <form >
                         <div className="form-group">
                         <label for="regemail">eMail</label>
                         <input className="form-control" id="regemail" type="text" value={this.state.regemail} onChange={this.handleChange}
@@ -85,7 +85,7 @@ var RegModal = React.createClass({
                         <input className="form-control" id="regpwd" type="text" value={this.state.regpwd} onChange={this.handleChange}
                 required/>
                        
-                        <button className="btn btn-primary" id="register-btn" type="submit">Submit</button>
+                        <button className="btn btn-primary" id="register-btn" type="submit" onClick={this.handleSubmit} data-dismiss="modal">Submit</button>
                          </div>
                     </form>
                        

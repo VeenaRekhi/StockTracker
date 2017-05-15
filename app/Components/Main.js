@@ -4,6 +4,7 @@ var React = require("react");
 // Here we include all of the sub-components
 var Form = require("./children/Form");
 var Results = require("./children/Results");
+var Logon = require("./Logon");
 var StockApp = require("./StockApp");
 
 // Helper Function
@@ -15,8 +16,15 @@ var Main = React.createClass({
   // Here we set a generic state associated with the number of clicks
   getInitialState: function() {
     console.log("initialState in Main.js");
-    return { searchTerm: "", results: ""};
+    return { setUser: "", searchTerm: "", results: ""};
   },
+// This function allows childrens to update the parent.
+  setUser: function(user) {
+    console.log(user);
+    this.setState({ setUser: user });
+    return { setUser: user };
+  },
+
 
   // componentDidUpdate is a lifecycle method that will get run every time the component updates it's
   // props or state
@@ -30,13 +38,13 @@ var Main = React.createClass({
           console.log("coming back from runQuery:" + data.t + data.l);
           this.setState({ results: data });
           // insert db posting here   !!!!!!!
-          var stocking = {sym: data.t, price: data.l, dtrade: data.lt};
-          console.log("stocking:" + stocking);
-          helpers.postStocking(stocking).then(function(resp) {
+          // var stocking = {sym: data.t, price: data.l, dtrade: data.lt};
+          // console.log("stocking:" + stocking);
+          // helpers.postStocking(stocking).then(function(resp) {
 
-            console.log("comming back from helper.postStocking" + resp);
+          //   console.log("comming back from helper.postStocking" + resp);
 
-          });
+          // });
 
 
 
@@ -55,10 +63,12 @@ var Main = React.createClass({
   render: function() {
     return (
       <div className="container-fluid"  id="main-content">
+        <Logon setUser={this.setUser}/>
+        <h4>UserId : {this.state.setUser}</h4>
 
         <div className="row">
           <div className="col-md-9">
-                <StockApp />
+                <StockApp setUser={this.state.setUser}/>
           </div>
 
           <div className="col-md-3">

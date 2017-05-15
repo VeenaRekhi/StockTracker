@@ -12,11 +12,8 @@ var LogModal = require("./components/LogModal");
 // This code here allows us to render our main component (in this case Main)
 ReactDOM.render(
 <div className="main-container">
-    <Logon />
     {/*<StockApp />*/}
     <Main />
-    <RegModal />
-    <LogModal />
 </div>
 , document.getElementById("app")
 );

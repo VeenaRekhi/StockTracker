@@ -28,9 +28,15 @@ getInitialState: function() {
 
      helpers.getUser(userInfo).then(function(resp) {
 
-       console.log("comming back from helper.getUser" + resp);
-
+       console.log("coming back from helper.getUser" + resp);
+       // email address should be accessible here
+       // then use this email address to pass to util.helper to findall rows where email=email
+       // populate an object to be PASSED stockapp.js as stocklist
+       //
      });
+         this.props.setUser(this.state.logemail);
+
+
 
     // Clearing the input field after submitting
     this.setState({ logemail: "", logpwd: "" });
@@ -41,7 +47,7 @@ getInitialState: function() {
   render: function() {
     return (
 
-        <div className="modal fade" id="logModal" role="dialog">
+        <div className="modal" id="logModal" role="dialog">
             
             <div className="modal-dialog">
             
@@ -62,7 +68,7 @@ getInitialState: function() {
                     <div className="panel-body">
 
                     {/*<!-- Entry Form -->*/}
-                    <form onSubmit={this.handleSubmit}>
+                    <form >
                         <div className="form-group">
                         <label for="logemail">eMail</label>
                         <input className="form-control" 
@@ -83,6 +89,8 @@ getInitialState: function() {
                         <button className="btn btn-primary" 
                                 id="log-btn" 
                                 type="submit"
+                                onClick={this.handleSubmit}
+                                data-dismiss="modal"
                                 >Submit</button>
                         </div>
                     </form>

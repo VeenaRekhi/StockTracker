@@ -1,6 +1,7 @@
 // Include React
 var React = require("react");
 
+var LogModal = require("./LogModal.js");
 // Here we include all of the sub-components
 
 
@@ -11,15 +12,14 @@ var React = require("react");
 var Logon = React.createClass({
 
 //   // Here we set a generic state associated with the number of clicks
-//   getInitialState: function() {
-//     return { searchTerm: "", results: ""};
-//   },
-
+  getInitialState: function() {
+    return { };
+  },
 
   // Here we describe this component's render method
   render: function() {
     return (
-        <nav className="navbar navbar-inverse navbar-fixed-top">
+        <nav className="navbar navbar-inverse">
             <div className="container-fluid">
             
                 <div className="nav navbar-header"> 
@@ -40,8 +40,10 @@ var Logon = React.createClass({
                     </li>
                 </ul>
                 </h5>
-
             </div>
+                <div>
+                    <LogModal setUser={this.props.setUser}/>
+                </div>
         </nav>
 
     );

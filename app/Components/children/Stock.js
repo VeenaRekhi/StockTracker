@@ -8,11 +8,11 @@ handleRemoveStock: function() {
 render: function() {
     return (
     <tr>
-        <td>{this.props.stock.sName}</td>
-        <td>{this.props.stock.sQuantity}</td>
-        <td>{this.props.stock.sPrice}</td>
-        <td>{this.props.stock.sDate}</td>
-        <td>{this.props.stock.sBroker}</td>
+        <td>{this.props.stock[0]}</td>
+        <td>{this.props.stock[1]}</td>
+        <td>{this.props.stock[2]}</td>
+        <td>{this.props.stock[3]}</td>
+        <td>{this.props.stock[4]}</td>
         <td><input type="button"  className="btn btn-primary" value="Remove" onClick={this.handleRemoveStock}/></td>
     </tr>
     );
